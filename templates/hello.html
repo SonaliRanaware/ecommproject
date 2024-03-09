@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
+   <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+  <h1>Welcome in my ecomm app ......</h1>
+  <p>data in dictinary is:{{greet}}</p>
+  {{x}}<br>
+
+  {{y}}
+  <br>
+{% comment %}
+  {% if x > y %}
+      <p>{{x}}is greater</p>
+  {% else %}
+      <p>{{y}} is greater</p>
+  {% endif %}
+
+
+<p>list is:</p>
+{% for x in l %}
+  <P>{{x}}</P>
+{% endfor %}  
+{% endcomment %}  
+{{products}}
+<p>My products is</p>
+{% for x in products %}
+ <strong> Sr.No:</strong>{{forloop.counter}}<br>
+ <strong>Name:</strong>{{x.name}}<br>
+ <strong>Category:</strong>{{x.cat}}<br>
+ <strong>Price:</strong>{{x.price}}<br>
+
+{% endfor %}
+<!--adding js code-->
+<button ondblclick="greet()" >click here to go greet</button>
+<br>
+<br>
+<!--adding images-->
+<img src="{% static 'images/image.jpeg'%} "width="200px" height="150px" alt="pet product images">
+</body>
+</html>
